@@ -17,7 +17,7 @@ enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include)
 
 # 添加可执行文件
-add_executable(test_math test_math.cpp math.c)
+add_executable(test_math test_math.cpp src/math.c)
 
 # 链接 Google Test 和 pthread
 target_link_libraries(test_math gtest gtest_main pthread)

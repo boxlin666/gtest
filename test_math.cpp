@@ -2,7 +2,7 @@
 
 // 通过 extern "C" 声明 C 函数
 extern "C" {
-    #include "math.h"  // 引入 C 语言的头文件
+    #include "include/math.h"  // 引入 C 语言的头文件
 }
 
 // 测试加法函数
