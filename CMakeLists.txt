@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(MyTest)
+project(CMathTest)
 
 include(FetchContent)
 
@@ -13,8 +13,14 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(test_sample test_sample.cpp main.cpp)
-target_link_libraries(test_sample gtest gtest_main pthread)
+# 包含 C 语言的头文件
+include_directories(${gtest_SOURCE_DIR}/include)
+
+# 添加可执行文件
+add_executable(test_math test_math.cpp math.c)
+
+# 链接 Google Test 和 pthread
+target_link_libraries(test_math gtest gtest_main pthread)
 
 include(GoogleTest)
-gtest_discover_tests(test_sample)
+gtest_discover_tests(test_math)
